@@ -47,10 +47,15 @@ const videoSchema = mongoose.Schema({
     message: "viewCount must be an integer",
   },
   userLiked: {
-    type: String,
+    type: Array,
   },
   userDisliked: {
     type: Array,
+  },
+  uploaderEmail: {
+      type: String,
+      required: [true, "Please provide an uploader email for this video."],
+      minLength: [5, "Uploader email must be atleast 3 characters"],
   },
 });
 

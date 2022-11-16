@@ -17,6 +17,7 @@ router
  * @apiError {500 Internal Server Error.} 
 */
     .get(videoController.getAllVideos)
+    .post(videoController.addAVideo)
 
 
 
