@@ -8,13 +8,13 @@ const getAllVideos = async (req, res, next) => {
         // //gets all videos in the result
         // const result = await videoCollection.find({}).toArray();
         //sending the video data as response
-
+        console.log('hithere');
         const videos = await getAllVideoService();
         
         res.status(200).json({
             status: "Success",
             message: "Data acquired",
-            data: products,
+            data: videos,
         });
         
     } catch (error) {
