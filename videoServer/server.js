@@ -18,5 +18,5 @@ mongoose
   });
 
   app.listen(port, () => {
-    console.log(`Onnorokom is running on port ${port}`);
+    console.log(`Onnorokom Video server is running on port ${port}`);
   })
