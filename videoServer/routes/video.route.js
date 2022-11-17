@@ -22,6 +22,7 @@ router
 router
     .route('/:id')
     .get(videoController.getOneVideo)
+    .patch(videoController.updateOneVideo)
     
 
 

@@ -2,6 +2,8 @@ const {
   getAllVideoService,
   addAVideoService,
   getOneVideoService,
+  updateOneVideoService
+  
 } = require("../services/video.service");
 const { getDb } = require("../utilities/dbConnect");
 
@@ -56,15 +58,15 @@ const addAVideo = async (req, res) => {
 };
 
 //updates one video's specific value
-const updateOneProduct = async (req, res, next) => {
+const updateOneVideo = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const result = await updateProductService(id, req.body);
+    const result = await updateOneVideoService(id, req.body);
 
     res.status(200).json({
       success: true,
-      message: `Product () Updated`,
+      message: `Video () Updated`,
       result: result,
     });
   } catch (error) {
@@ -80,5 +82,5 @@ module.exports = {
   getAllVideos,
   getOneVideo,
   addAVideo,
-  updateOneProduct,
+  updateOneVideo,
 };
