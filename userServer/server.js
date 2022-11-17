@@ -18,5 +18,5 @@ const port = process.env.PORT || 5000;
 //   });
 
   app.listen(port, () => {
-    console.log(`Onnorokom user server is running on port ${port}`);
+    console.log(` User server is running on port ${port}`);
   })

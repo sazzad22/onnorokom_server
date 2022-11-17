@@ -19,6 +19,11 @@ router
     .get(videoController.getAllVideos)
     .post(videoController.addAVideo)
 
+router
+    .route('/:id')
+    .get(videoController.getOneVideo)
+    
+
 
 
 module.exports = router;

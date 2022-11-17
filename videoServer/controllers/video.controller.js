@@ -1,15 +1,13 @@
 const {
   getAllVideoService,
   addAVideoService,
+  getOneVideoService,
 } = require("../services/video.service");
 const { getDb } = require("../utilities/dbConnect");
 
 const getAllVideos = async (req, res, next) => {
   try {
-    // const db = getDb();
-    // const videoCollection = db.collection('videoCollection');
-    // //gets all videos in the result
-    // const result = await videoCollection.find({}).toArray();
+    
     //sending the video data as response
     console.log("hithere");
     const videos = await getAllVideoService();
@@ -24,6 +22,26 @@ const getAllVideos = async (req, res, next) => {
   }
 };
 
+//gets one video filtered by id
+const getOneVideo = async (req, res, next) => {
+  try {
+    
+    const id = req.params.id;
+    //sending one video data as response
+    console.log("hithere");
+    const video = await getOneVideoService(id);
+
+    res.status(200).json({
+      status: "Success",
+      message: "Data acquired",
+      data: video,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+//adds a video to the videodatabase
 const addAVideo = async (req, res) => {
   try {
     const result = await addAVideoService(req.body);
@@ -37,7 +55,30 @@ const addAVideo = async (req, res) => {
   }
 };
 
+//updates one video's specific value
+const updateOneProduct = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const result = await updateProductService(id, req.body);
+
+    res.status(200).json({
+      success: true,
+      message: `Product () Updated`,
+      result: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Not updated",
+      error: error.message,
+    });
+  }
+};
+
 module.exports = {
-    getAllVideos,
-    addAVideo,
+  getAllVideos,
+  getOneVideo,
+  addAVideo,
+  updateOneProduct,
 };

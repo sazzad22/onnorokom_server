@@ -43,8 +43,8 @@ const videoSchema = mongoose.Schema({
         if (isInteger) return true;
         else return false;
       },
+      message: "viewCount must be an integer",
     },
-    message: "viewCount must be an integer",
   },
   userLiked: {
     type: Array,
