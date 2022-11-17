@@ -26,5 +26,7 @@ exports.addAVideoService = async (addedVideo) => {
 //update video data - whichever field is update
 exports.updateOneVideoService = async (id, updatedData) => {
     const result = await Video.updateOne({ _id: id }, { $set: updatedData });
+    const query = { _id: ObjectId(id) };
+   result.video = await Video.findOne(query);
     return result;
   };
