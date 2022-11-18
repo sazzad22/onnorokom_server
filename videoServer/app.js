@@ -11,7 +11,6 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
-app.use('/',(req,res)=>res.send("Video Server Is Online!!"))
 //api route middleware
 app.use('/api/v1/video', routerVideo);
 
