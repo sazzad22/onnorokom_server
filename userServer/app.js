@@ -14,6 +14,11 @@ app.use(express.json());
 //api route middleware
 app.use('/api/v1/user', routerUser);
 
+//home response
+app.get('/',async (req, res) => {
+    res.send("User is to be loaded");
+})
+
 
 
 module.exports = app;
