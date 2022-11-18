@@ -10,8 +10,14 @@ app.use(cors());
 app.use(express.json());
 
 //*Redirecting the routes
-app.use('/video-server', proxy('http://localhost:5000'));
+app.use('/video-server', proxy('https://onnorokom-server.vercel.app'));
 app.use('/user-server', proxy('http://localhost:8000'));
+
+//home response
+app.get('/',async (req, res) => {
+    res.send("Api gateway server is running");
+})
+
 
 
 
