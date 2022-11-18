@@ -5,7 +5,7 @@ const {
   updateOneVideoService
   
 } = require("../services/video.service");
-const { getDb } = require("../utilities/dbConnect");
+
 
 const getAllVideos = async (req, res, next) => {
   try {
