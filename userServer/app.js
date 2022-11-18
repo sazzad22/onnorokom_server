@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 //api route middleware
-app.use('/api/v1/video', routerUser);
+app.use('/api/v1/user', routerUser);
 
 
 

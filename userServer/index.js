@@ -7,16 +7,16 @@ const app = require("./app");
 const port = process.env.PORT || 8000;
 
 //database connection
-// mongoose
-//     .connect(process.env.DB_URI, {
-//         dbName: 'VideoDatabase',
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log("db Connected");
-//   });
+mongoose
+    .connect(process.env.DB_URI, {
+        dbName: 'UserDatabase',
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("User db Connected");
+  });
 
   app.listen(port, () => {
-    console.log(` User server is running on port ${port}`);
+    console.log(`User server is running on port ${port}`);
   })

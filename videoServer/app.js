@@ -14,6 +14,11 @@ app.use(express.json());
 //api route middleware
 app.use('/api/v1/video', routerVideo);
 
+//home response
+app.get('/',async (req, res) => {
+    res.send("Video server is running");
+})
+
 
 
 module.exports = app;
