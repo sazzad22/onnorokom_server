@@ -25,7 +25,7 @@ exports.addAVideoService = async (addedVideo) => {
     email: addedVideo?.uploaderEmail,
     link:addedVideo.link
   };
-  const response = await fetch("http://localhost:8000/api/v1/user", {
+  const response = await fetch("https://onnorokom-server-cyce.vercel.app/user-server/api/v1/user", {
     method: "PATCH",
     body: JSON.stringify(body),
     headers: { "Content-Type": "application/json" },
