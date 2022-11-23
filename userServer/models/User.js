@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require('validator');
 
 // Schema design //
 const userSchema = mongoose.Schema(
@@ -13,7 +14,17 @@ const userSchema = mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+      required: [true,'password is required'],
+      validate: {
+        validator: (value) => validator.isStrongPassword(value, {
+          minLength: 6,
+          minLowercase: 1,
+          minNumbers: 1,
+          minUpperCase: 1,
+          minSymbols: 1
+        }),
+        message:"Password is not strong enough"
+      }
     },
     uploadedVideo: {
       type: Array,

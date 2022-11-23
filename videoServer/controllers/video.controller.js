@@ -32,6 +32,7 @@ const getOneVideo = async (req, res, next) => {
     //sending one video data as response
     console.log("hithere");
     const video = await getOneVideoService(id);
+    console.log("hithere");
 
     res.status(200).json({
       status: "Success",
