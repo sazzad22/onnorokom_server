@@ -23,7 +23,7 @@ exports.addOneUserService = async (addedUser) => {
   //* generate token
   // const token = jwt.sign({ email: addedUser.email }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '99999h' })
   const result = await User.create(addedUser);
-  return [result,token];
+  return [result];
 };
 
 //update user field

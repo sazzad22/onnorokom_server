@@ -24,12 +24,11 @@ const getAllUsers = async (req, res, next) => {
 //adds a user to the userdatabase
 const addOneUser = async (req, res) => {
   try {
-    const [result,token] = await addOneUserService(req.body);
+    const [result] = await addOneUserService(req.body);
 
     res.status(200).json({
       success: true,
-      data: result,
-      token:token
+      data: result
     });
   } catch (error) {
     res.status(400).json({

@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema(
       required: [true,'password is required'],
       validate: {
         validator: (value) => validator.isStrongPassword(value, {
-          minLength: 6,
+          minLength: 4,
           minLowercase: 1,
           minNumbers: 1,
           minUpperCase: 1,
